@@ -52,7 +52,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px 0 0 10px;
+  /* border-radius: 10px 0 0 10px; */
 }
 
 .img-shadow {
@@ -99,7 +99,7 @@ h1 {
 }
 
 /* The base styles for the button */
-input[type='submit'] {
+/* input[type='submit'] {
   width: 100%;
   background: linear-gradient(90deg, #212b2a, #0e0f11 ); ;
   color: #fff;
@@ -110,17 +110,17 @@ input[type='submit'] {
   font-size: 16px;
   border-radius: 5px;
   transition: transform 0.3s, box-shadow 0.5s;
-}
+} */
 
-input[type='submit']:hover {
+/* input[type='submit']:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 8px 0 #fff;
-}
+} */
 
-input[type='submit']:active {
+/* input[type='submit']:active {
   transform: translateY(0);
   box-shadow: none;
-}
+} */
 
 p {
   color: #ccc;

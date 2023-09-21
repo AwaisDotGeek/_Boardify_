@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use inertia\Inertia;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,14 @@ use inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('basic/Welcome');
+})->middleware('auth');
+
+Route::get('/signup', function() {
+    return Inertia::render('users/Signup');
 });
+
+Route::post('/signup', [UserController::class, 'createUser']);
+
+Route::get('/verify-email', [VerificationController::class, 'showVerifyCodePage']);
+
+Route::post('/verify-email/', [VerificationController::class, 'verifyVerificationCode']);
