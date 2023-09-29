@@ -1,20 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html, body {
   width: calc(100vw + 0.5em);
   min-height: 100vh;
   font-family: Arial, sans-serif;
   background: #404a4c;
-  overflow-x: hidden;
 }
 
 /* Hide scroll bar */
 body::-webkit-scrollbar {
-  width: 0.5em;
+    width: 0.1rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -28,6 +21,7 @@ body::-webkit-scrollbar-thumb {
 /* Hide scrollbar for Firefox */
 body {
   scrollbar-width: none;
+    overflow-x: hidden ;
 }
 
 /* Styling for all forms (login, signup, reset password) */

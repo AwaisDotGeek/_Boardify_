@@ -3,10 +3,10 @@
         <div class="w-screen h-screen flex justify-center items-center">
             <img src="../../assets/bg.png" alt="" class="border-0">
         </div>
-        <div class="bg-img-shadow"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
 
         <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-            <div class="bg-404a4c text-white p-8 rounded-lg opacity-95 grid place-items-center">
+            <div class="bg-black-2 text-white p-8 rounded-xl opacity-95 grid place-items-center">
                 <div class="w-20 h-20 mb-4 rounded-full overflow-hidden">
                     <img src="../../assets/logo.png" alt="">
                 </div>
@@ -20,15 +20,11 @@
     </div>
 </template>
 
-<script setup> 
+<script setup>
     import { Link } from '@inertiajs/vue3';
 </script>
 
 <style scoped>
-
-.bg-404a4c {
-    background: #404a4c;
-}
 
 h3 {
     letter-spacing: 0.5px;
@@ -54,18 +50,6 @@ a:hover {
 
 a:active {
     transform: translateY(2px);
-}
-
-
-/* Shadow over bg image */
-.bg-img-shadow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #000;
-    width: 100%;
-    height: 100%;
-    opacity: 0.3;
 }
 </style>
 
