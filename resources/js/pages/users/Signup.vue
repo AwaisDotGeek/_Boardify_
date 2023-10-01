@@ -130,12 +130,12 @@
                     this.form,
                     {
                     onStart: () => {
-                        form.processing = true;
+                        this.form.processing = true;
                         this.isLoaderCardActive = true;
                         this.loaderText = "Creating Account";
                     },
                     onFinish: () => {
-                        form.processing = false;
+                        this.form.processing = false;
                         this.isLoaderCardActive = false;
                         this.loaderText = "Creating Account";
                     },

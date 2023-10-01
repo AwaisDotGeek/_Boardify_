@@ -12,7 +12,7 @@
             </div>
             <div class="game-btns-container">
                 <button class="game-btn learn-btn">Let's Learn</button>
-                <button class="game-btn play-btn">Let's Play</button>
+                <a class="game-btn play-btn text-center" href="/tictactoe">Let's Play</a>
             </div>
         </div>
     </section>
@@ -23,6 +23,7 @@
     import ludoImage from '../assets/ludo.jpg';
     import rangImage from '../assets/rang.jpg';
     import snackers from '../assets/snackers.jpg';
+    import ttt from '../assets/tic_tac_toe.jpg';
     export default {
         props: ['id', 'gameName', 'gameHeadText', 'animationStyle'],
         computed: {
@@ -36,8 +37,15 @@
                         return rangImage;
                     case 'Snakes and Ladders':
                         return snackers;
+                    case 'Tic Tac Toe':
+                        return ttt;
                 }
                 return ludoImage;
+            }
+        },
+        methods: {
+            playGame() {
+                this.$inertia.replace('/tictactoe');
             }
         }
     }

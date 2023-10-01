@@ -8,6 +8,23 @@
         </header>
 
         <div class="flex flex-col justify-center items-center gap-5 p-5">
+            <GameCard id="TTT" gameName="Tic Tac Toe" gameHeadText="Embrace the Battle of Wits!">
+                <template v-slot:gameText>
+                    Greetings, fellow strategists! I am Tic Tac Toe,
+                    the timeless arena where intellects collide in a
+                    thrilling battle of Xs and Os. Engage in a strategic
+                    showdown, where every move holds the key to victory.
+                    Whether you're a seasoned pro or a newcomer,
+                    I offer an exciting journey through the world of
+                    tactical thinking and decisive plays. Unleash your
+                    inner strategist, anticipate your opponent's moves,
+                    and emerge triumphant in this classic duel of mind and
+                    logic. Join me now, and let's embark on an epic quest
+                    to conquer the nine-space battlefield with your wits
+                    and cunning! ⭕❌🧠
+                </template>
+            </GameCard>
+
             <GameCard id="chess" gameName="Chess" gameHeadText="Unleash Your Strategic Brilliance!">
                 <template v-slot:gameText>
                     Greetings, noble players! I am Chess, the timeless
@@ -84,7 +101,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import Footer from "../../shared/Footer.vue";
 import GameCard from "../../shared/GameCard.vue";
 import Navbar from '../../shared/Navbar.vue';

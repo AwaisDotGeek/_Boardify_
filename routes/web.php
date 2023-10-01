@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use inertia\Inertia;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\TicTacToeController;
+use App\Http\Controllers\ChatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,10 @@ Route::get('/reset-password', function () {
     return Inertia::render('users/ResetPassword');
 });
 
+Route::get('/tictactoe', function (){
+    return Inertia::render('Games/TicTacToe/Game');
+})->middleware('auth');
+
 Route::post('/get_verification_code', [VerificationController::class, 'getVerificationCode']);
 
 Route::post('/signup', [UserController::class, 'createUser']);
@@ -51,3 +57,16 @@ Route::post('/check-email-existence', [VerificationController::class, 'checkEmai
 Route::post('/verify-email-code', [VerificationController::class, 'verifyEmailCode']);
 
 Route::post('/reset-password', [VerificationController::class, 'resetPassword']);
+
+
+// Discussions
+Route::get('/chat', [ChatsController::class, 'index']);
+Route::get('messages', [ChatsController::class, 'fetchMessages']);
+Route::post('messages', [ChatsController::class, 'sendMessage']);
+
+// Tic Tac Toe
+// Start a new game
+Route::post('/tictactoe/new', [TicTacToeController::class, 'newGame'])->name('tictactoe.new');
+
+// Make a move
+Route::post('/tictactoe/move', [TicTacToeController::class, 'makeMove'])->name('tictactoe.move');

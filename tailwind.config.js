@@ -13,6 +13,17 @@ export default {
         'black-3': '#333738',
         'black-4': '#212b2a',
         'black-5': '#0e0F11',
+      },
+      boxShadow: {
+        'bubble': 'inset 0.5em 0.5em 0.5em rgba(255, 255, 255, 0.5),\n' +
+            '            inset -0.5em -0.5em 0.5em rgba(0, 0, 0, 0.35),\n' +
+            '            0.1em 0.1em 0.5em black;'
+      },
+      height: {
+          'height_80': '80vh',
+      },
+      width: {
+          'width_90': '90%',
       }
     },
   },
