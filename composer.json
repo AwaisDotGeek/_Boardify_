@@ -47,6 +47,43 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "deploy": [
+            "@php artisan down",
+            "git pull origin main",
+            "composer install --no-dev --optimize-autoloader",
+            "npm ci && npm run build",
+            "@php artisan migrate --force",
+            "@php artisan config:cache",
+            "@php artisan route:cache",
+            "@php artisan view:cache",
+            "@php artisan event:cache",
+            "@php artisan up"
+        ],
+        "deploy:rollback": [
+            "@php artisan down",
+            "@php artisan migrate:rollback",
+            "@php artisan up"
+        ],
+        "optimize": [
+            "composer install --optimize-autoloader --no-dev",
+            "@php artisan config:cache",
+            "@php artisan route:cache",
+            "@php artisan view:cache",
+            "@php artisan event:cache"
+        ],
+        "clear-cache": [
+            "@php artisan config:clear",
+            "@php artisan route:clear",
+            "@php artisan view:clear",
+            "@php artisan cache:clear",
+            "@php artisan event:clear"
+        ],
+        "fresh": [
+            "@php artisan migrate:fresh --seed"
+        ],
+        "test": [
+            "@php artisan test"
         ]
     },
     "extra": {
